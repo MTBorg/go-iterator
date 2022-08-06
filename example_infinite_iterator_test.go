@@ -1,8 +1,10 @@
-package iterator
+package iterator_test
 
 import (
 	"fmt"
 	"math/rand"
+
+	"github.com/MTBorg/go-iterator"
 )
 
 type InfiniteIterator struct {
@@ -15,7 +17,7 @@ func (iter InfiniteIterator) Next() *int {
 }
 
 func ExampleIterate_infiniteIterator() {
-	iter := Iterate[int](InfiniteIterator{10})
+	iter := iterator.Iterate[int](InfiniteIterator{10})
 
 	// Take 10 (pseudo-)random integers from the interval [0,10) and group them
 	// into even and odd numbers

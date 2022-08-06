@@ -1,6 +1,10 @@
-package iterator
+package iterator_test
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/MTBorg/go-iterator"
+)
 
 type BinaryTree struct {
 	root Node
@@ -61,19 +65,19 @@ func ExampleIterate_binaryTreeIterator() {
 
 	// Traverse tree
 	values := []int{}
-	iter := Iterate[Node](NewBinaryTreeIterator(tree))
+	iter := iterator.Iterate[Node](NewBinaryTreeIterator(tree))
 	iter.ForEach(func(n Node) { values = append(values, n.Value) })
 	fmt.Println(values)
 
 	// Traverse tree in reverse order
 	values = []int{}
-	iter = Iterate[Node](NewBinaryTreeIterator(tree))
+	iter = iterator.Iterate[Node](NewBinaryTreeIterator(tree))
 	iter.Reverse().ForEach(func(n Node) { values = append(values, n.Value) })
 	fmt.Println(values)
 
 	// Filter all node whose values are greater than 5
 	values = []int{}
-	iter = Iterate[Node](NewBinaryTreeIterator(tree))
+	iter = iterator.Iterate[Node](NewBinaryTreeIterator(tree))
 	iter.Filter(func(n Node) bool { return n.Value > 5 }).ForEach(func(n Node) { values = append(values, n.Value) })
 	fmt.Println(values)
 	// Output:
