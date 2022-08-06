@@ -1,6 +1,7 @@
 # go-iterator
 
 ![go workflow](https://github.com/MTBorg/go-iterator/actions/workflows/go.yml/badge.svg)
+[![Go Reference](https://pkg.go.dev/badge/github.com/MTBorg/go-iterator.svg)](https://pkg.go.dev/github.com/MTBorg/go-iterator)
 
 `go-iterator` provides a generic implementation of the
 [iterator](https://en.wikipedia.org/wiki/Iterator_pattern) pattern.
